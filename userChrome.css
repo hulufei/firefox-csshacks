@@ -1,0 +1,7 @@
+/* Example userChrome.css file */
+
+/* Import your desired components first */
+
+@import url(chrome/navbar_below_content.css);
+
+/* Apply your custom modifications after imports */
