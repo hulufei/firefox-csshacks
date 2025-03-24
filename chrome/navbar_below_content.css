@@ -25,17 +25,34 @@ See the above repository for updates as well as full license text. */
     z-index: 1;
   }
   #nav-bar-customization-target{ -webkit-box-flex: 1; }
+  
+  :root[lwtheme] #nav-bar{
+    background-image: linear-gradient(var(--toolbar-bgcolor),var(--toolbar-bgcolor)), var(--lwt-additional-images,var(--toolbar-bgimage)) !important;
+    background-position: top,var(--lwt-background-alignment);
+    background-repeat: repeat,var(--lwt-background-tiling);
+  }
+  :root[lwtheme-image] #nav-bar{
+    background-image: linear-gradient(var(--toolbar-bgcolor),var(--toolbar-bgcolor)),var(--lwt-header-image), var(--lwt-additional-images,var(--toolbar-bgimage)) !important;
+  }
 
   /* Fix panels sizing */
   .panel-viewstack{ max-height: unset !important; }
 
   #urlbar[breakout][breakout-extend]{
     display: flex !important;
-    flex-direction: column-reverse;
+    flex-direction: column-reverse !important;
     bottom: 0px !important; /* Change to 3-5 px if using compact_urlbar_megabar.css depending on toolbar density */
     top: auto !important;
   }
 
   .urlbarView-body-inner{ border-top-style: none !important; }
-
+  
+  @media (-moz-platform: linux){
+    #notification-popup[side="top"]{
+      margin-top: calc(-2 * var(--panel-padding-block) - 40px - 32px - 8.5em) !important;
+    }
+    #permission-popup[side="top"]{
+      margin-top: calc(-2 * var(--panel-padding-block) - 2.5em);
+    }
+  }
 }
