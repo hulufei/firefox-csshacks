@@ -9,5 +9,9 @@
 /* Apply your custom modifications after imports */
 /* For the best results, customize Firefox: always hide toolbar, and check titlebar */
 #nav-bar {
-  margin-bottom: 45px;
+  margin-bottom: 42px;
+}
+
+#urlbar[breakout][breakout-extend]{
+  bottom: 42px !important; /* Change to 3-5 px if using compact_urlbar_megabar.css depending on toolbar density */
 }
